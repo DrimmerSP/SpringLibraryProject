@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "users",
         uniqueConstraints = {@UniqueConstraint(name = "uniqueEmail", columnNames = "email"),
-                @UniqueConstraint(name = "uniqueLogin", columnNames = "login")
+                @UniqueConstraint(name = "uniquePhone", columnNames = "phone")
         })
 @Setter
 @Getter
@@ -21,11 +21,11 @@ import java.util.List;
 @SequenceGenerator(name = "default_generator", sequenceName = "users_seq", allocationSize = 1)
 public class User extends GenericModel {
 
-        @Column(name = "login", nullable = false)
-        private String login;
+//        @Column(name = "login", nullable = false)
+//        private String login;
 
-        @Column(name = "password", nullable = false)
-        private String password;
+//        @Column(name = "password", nullable = false)
+//        private String password;
 
         @Column(name = "email", nullable = false)
         private String email;
@@ -39,21 +39,21 @@ public class User extends GenericModel {
         @Column(name = "last_name", nullable = false)
         private String lastName;
 
-        @Column(name = "middle_name", nullable = false)
-        private String middleName;
+//        @Column(name = "middle_name", nullable = false)
+//        private String middleName;
 
         @Column(name = "phone", nullable = false)
         private String phone;
 
-        @Column(name = "address", nullable = false)
-        private String address;
+//        @Column(name = "address", nullable = false)
+//        private String address;
 
         @ManyToOne
         @JoinColumn(name = "role_id", nullable = false,
                     foreignKey = @ForeignKey(name = "FK_USERS_ROLES"))
         private Role role;
 
-        @OneToMany(mappedBy = "user_id", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-        @Column(name = "taked_books")
+        @OneToMany(mappedBy = "bookTaker", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//        @Column(name = "taked_books")
         private List<Book> books;
 }

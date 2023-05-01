@@ -129,5 +129,4 @@ CREATE TABLE public.users
 -- ALTER TABLE public.users
 --     OWNER TO postgres;
 
--- TODO продолжить (ALTER TABLE/OWNER закоментированы)
 

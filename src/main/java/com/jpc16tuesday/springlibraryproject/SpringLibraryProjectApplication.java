@@ -5,6 +5,8 @@ import com.jpc16tuesday.springlibraryproject.dbexample.MyDBConfigContext;
 import com.jpc16tuesday.springlibraryproject.dbexample.dao.BookDAOBean;
 import com.jpc16tuesday.springlibraryproject.dbexample.dao.BookDaoJDBC;
 import com.jpc16tuesday.springlibraryproject.dbexample.db.DBConnection;
+import com.jpc16tuesday.springlibraryproject.library.model.Role;
+import com.jpc16tuesday.springlibraryproject.library.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
+import java.time.LocalDate;
 
 
 @SpringBootApplication
@@ -68,8 +72,5 @@ public class SpringLibraryProjectApplication implements CommandLineRunner {
 //                        rs.getDate("date_added")
 //                )));
 //        bookList.forEach(System.out::println);
-
-
-
     }
 }

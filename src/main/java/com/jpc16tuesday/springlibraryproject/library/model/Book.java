@@ -47,7 +47,7 @@ public class Book extends GenericModel {
     List<Author> authors;
 
     @ManyToOne
-    @JoinColumn(name = "bookTaker", nullable = false) // замена местамибукТейкер и юзер_айди
-    private User user_id;
+    @JoinColumn(name = "book_taker", nullable = false)
+    private User bookTaker;
 
 }
